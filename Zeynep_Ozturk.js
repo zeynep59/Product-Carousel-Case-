@@ -63,6 +63,7 @@
       wrapper.style.padding = "16px";
       wrapper.style.boxShadow = "0 2px 8px rgba(0,0,0,0.05)";
   
+      //create title container for design
       const titleContainer = document.createElement("div");
       titleContainer.style.background = "#fef6eb";
       titleContainer.style.padding = "25px 40px";
@@ -73,6 +74,7 @@
       titleContainer.style.justifyContent = "space-between";
       titleContainer.style.marginBottom = "20px";
   
+      
       const title = document.createElement("h2");
       title.textContent = "Beğenebileceğinizi Düşündüklerimiz";
       title.style.fontSize = "2.5rem";
@@ -80,6 +82,7 @@
       title.style.color = "#f28e00";
       title.style.margin = 0;
   
+      //add title
       titleContainer.appendChild(title);
       wrapper.appendChild(titleContainer);
   
@@ -95,7 +98,7 @@
   
       let itemsPerView = getItemsPerView();
       let currentIndex = 0;
-      let cardWidth = getCardWidth(); // Responsive 👇
+      let cardWidth = getCardWidth(); 
       const gap = 16;
   
       function getItemsPerView() {
@@ -106,6 +109,7 @@
         return 4;
       }
   
+      //for responsivity
       function getCardWidth() {
         const w = window.innerWidth;
         if (w < 600) return window.innerWidth - 40;
@@ -158,6 +162,7 @@
           }
         });
   
+        //stars
         const stars = document.createElement("div");
         stars.innerHTML = "★ ★ ★ ★ ★";
         stars.style.color = "#e9e9e9";
