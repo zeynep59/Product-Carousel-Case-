@@ -1,16 +1,41 @@
-# Product-Carousel-Case-
-Building a product carousel on ebebek website exactly like to the one visible on the website’s home  page.
-User Story 
-➔ Fetch the product list from this link sending a GET request. 
-➔ Title of the carousel should be “Beğenebileceğinizi düşündüklerimiz” ➔ You code should only 
-run in homepage, if user is on any other page you need to console.log “wrong page”. 
-➔ When a user clicks on a product, the respective product page should open in a new tab. 
-➔ If “price” and “original_price” are different, show both price like in the example and also 
-calculate the discount amount and show it as well. 
-➔ When user clicks on the heart icon should fill it with orange color, and this preference should 
-be stored in the local storage in an array. 
-➔ When the code runs for the second time: 
-◆ It should retrieve the product list from local storage rather than sending a new fetch 
-request. 
-◆ Products marked as favorites before are displayed with filled heart icons. ➔ The 
-design must be responsive and suitable for all platforms exactly like the website version.
+# Product Carousel Case
+
+This project implements a **product carousel component** for the **ebebek homepage**, mimicking the one currently displayed on the website. The carousel is dynamic, interactive, and responsive across devices.
+
+## 🧩 User Story & Features
+
+- ✅ **Homepage Restriction**:  
+  The script runs **only** on the homepage (`/`). If the user is on a different page, it logs:  
+  `console.log("wrong page");`
+
+- ✅ **Product Fetching & Caching**:  
+  - Product list is fetched via a `GET` request from:  
+    [`products.json`](https://gist.githubusercontent.com/sevindi/8bcbde9f02c1d4abe112809c974e1f49/raw/9bf93b58df623a9b16f1db721cd0a7a539296cf0/products.json)
+  - The result is cached in `localStorage` to avoid redundant requests.
+
+- ✅ **Carousel Title**:  
+  Displayed at the top:  
+  `"Beğenebileceğinizi Düşündüklerimiz"`
+
+- ✅ **Clickable Products**:  
+  Clicking a product opens its detailed page in a **new browser tab**.
+
+- ✅ **Price Display & Discounts**:  
+  If `price !== original_price`:
+  - Shows both prices
+  - Calculates and displays the **discount percentage**
+
+- ✅ **Favorites Feature**:  
+  - Users can click a **heart icon** to mark favorites.
+  - Marked items turn **orange** and are stored in `localStorage` under `"favorite-products"`.
+  - Favorite states persist on reload.
+
+
+
+## 📌 How It Works
+
+- On load, it:
+  1. Checks if on the homepage.
+  2. Loads product list from `localStorage` (or fetches if not cached).
+  3. Builds the carousel dynamically using DOM manipulation.
+  4. Binds interaction events (hearts, scroll buttons, resize, etc).
